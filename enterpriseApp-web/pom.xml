@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>enterpriseApp</artifactId>
+        <groupId>com.bchetty</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <groupId>com.bchetty</groupId>
+    <artifactId>enterpriseApp-web</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>enterpriseApp-web (${project.version})</name>
+
+    <properties>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.bchetty</groupId>
+            <artifactId>enterpriseApp-ejb</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <!-- In version 2.1-alpha-1, this was incorrectly named warSourceExcludes -->
+                    <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

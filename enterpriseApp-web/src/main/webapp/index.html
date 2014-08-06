@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angular JAVAEE Sample App</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="js/angular/angular.js"></script>
+        <script type="text/javascript" src="js/angular/angular-resource.js"></script>
+        <script type="text/javascript" src="js/angular/angular-route.js"></script>
+        <script type="text/javascript" src="js/angular/angular-animate.js"></script>
+        <script type="text/javascript" src="js/enterpriseApp.js"></script>
+    </head>
+
+    <body ng-app="enterpriseApp">
+        <div align="center" ng-controller="HelloController" style="width: 70%; height: 70%; margin: auto;">
+            <div class="panel panel-default">
+                <div class="panel-heading">List of Countries</div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li ng-repeat="country in countries">{{country.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
